@@ -1,68 +1,142 @@
-# React + Vite
+# 📋 TodoApp – Application de Gestion de Tâches (Node.js)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌟 Présentation
 
-Currently, two official plugins are available:
+**TodoApp** est une application web moderne de gestion de tâches conçue pour organiser, suivre et optimiser la charge de travail au sein d’une équipe.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Elle permet de centraliser les tâches, d’améliorer la visibilité sur les activités en cours et d’offrir une expérience utilisateur flexible grâce à une architecture évolutive et modulaire.
 
-## React Compiler
+Chaque tâche est définie par :
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* un **nom** (généré automatiquement)
+* un **type** (ingénierie, managérial, administratif, etc.)
+* une **charge de travail** (en heures)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎯 Objectifs
 
+* Structurer la gestion des tâches de manière efficace
+* Améliorer la visibilité sur la charge de travail
+* Offrir une architecture évolutive et maintenable
+* Fournir une expérience utilisateur personnalisable
+* Garantir la sécurité et la fiabilité des données
 
+---
 
-# TaskFlow - Gestion de tâches et projets
+## ⚙️ Architecture & Conception
 
-TaskFlow est une application web de gestion de tâches et de projets. Elle permet aux utilisateurs de gérer leurs tâches quotidiennes et de suivre l’avancement de projets en équipe.
+L’application repose sur une combinaison d’architectures logicielles et de design patterns permettant d’assurer modularité, flexibilité et évolutivité.
+
+### 🧩 Architectures utilisées
+
+* **Client / Serveur** : communication entre interface utilisateur et backend
+* **MVC (Model - View - Controller)** : séparation des responsabilités
+* **MVP (Model - View - Presenter)** : amélioration de la testabilité et découplage
+* **Architecture en couches (n-tier)** : structuration claire du système
+
+### 🧠 Design Patterns intégrés
+
+* **Singleton** : gestion centralisée des données
+* **Factory Method** : création flexible des tâches selon leur type
+* **Observer (Publish/Subscribe)** : système de notifications en temps réel
+* **Strategy** : choix dynamique du mode d’affichage
+* **State** : gestion des états et personnalisation de l’interface
 
 ---
 
 ## 🚀 Fonctionnalités
 
-- Authentification (connexion / inscription).  
-- Création, modification et suppression de projets.  
-- Ajout de membres à un projet et gestion de l’équipe.  
-- Ajout, modification et suppression de tâches par utilisateur.  
-- Barre de progression des projets.  
-- Gestion des fichiers attachés aux projets.  
-- Interface moderne avec React et composants Lucide-React.  
+* ✅ Création et gestion des tâches
+* ✅ Visualisation de la charge de travail
+* ✅ Mise à jour dynamique des données
+* ✅ Notifications en temps réel
+* ✅ Choix du mode d’affichage (liste, tableau, JSON)
+* ✅ Personnalisation de l’interface (thèmes, couleurs)
+* ✅ Authentification sécurisée
 
 ---
 
-## 📂 Structure du projet
+## 🧱 Structure du Projet
 
-/frontend
-├─ src/
-│ ├─ components/ # Composants React (Home,calendar, Projects, Authentification)
-│ ├─ CSS/ # Styles CSS
-│ └─ App.jsx
-/backend
-├─ routes/
-│ ├─ project.js # Routes API projets
-│ ├─ tasks.js # Routes API tâches
-│ └─ calendar.js # Routes API calendrier
-├─ configuration/
-│ └─ database.js # Configuration de la base de données
-└─ server.js # Serveur Express
+```
+todoapp/
+├── backend/              # Serveur et API
+│   ├── routes/           # Routes API
+│   │   ├── project.js    # Routes projets
+│   │   ├── tasks.js      # Routes tâches
+│   │   └── calendar.js   # Routes calendrier
+│   ├── configuration/    # Configuration
+│   │   └── database.js   # Base de données
+│   └── server.js         # Serveur Express
 
+└── frontend/             # Interface utilisateur
+    ├── src/
+    │   ├── components/  # Composants React (Home, Calendar, Projects, Authentification)
+    │   ├── CSS/         # Styles CSS
+    │   └── App.jsx      # Composant principal
+```
 
-## 🛠 Installation et lancement
+---
 
-### Prérequis
+## 🛠️ Stack Technique
 
-- Node.js >= 18  
-- npm ou yarn  
+* **Node.js**
+* **Express.js**
+* **React.js**
+* **JavaScript (ES6+)**
+* Stockage initial : mémoire (évolutif vers SQL/NoSQL)
 
-### Lancer le backend
+---
+
+## 🧪 Installation & Exécution
+
+### Backend
+
 ```bash
-npm run dev 
+cd backend
+npm install
+npm start
+```
 
-### Lancer le backend
+### Frontend
+
 ```bash
-npm run dev 
+cd frontend
+npm install
+npm start
+```
+
+Accès via :
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🔐 Sécurité
+
+* Authentification utilisateur (login / mot de passe)
+* Protection des routes sensibles
+* Gestion des accès
+
+---
+
+## 🔮 Évolutions Possibles
+
+* Intégration d’une base de données persistante
+* Gestion avancée des utilisateurs et équipes
+* Implémentation de WebSockets pour le temps réel
+* Déploiement cloud (Docker, CI/CD)
+* Ajout de tests automatisés
+
+---
+
+## 📌 Conclusion
+
+**TodoApp** propose une approche robuste et évolutive de la gestion de tâches, en s’appuyant sur des principes d’architecture modernes et des design patterns éprouvés.
+
+Elle constitue une base solide pour le développement d’applications professionnelles orientées organisation et productivité.
+
+---
